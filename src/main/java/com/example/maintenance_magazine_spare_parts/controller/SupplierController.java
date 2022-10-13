@@ -1,6 +1,5 @@
 package com.example.maintenance_magazine_spare_parts.controller;
 
-import com.example.maintenance_magazine_spare_parts.dto.SupplierPartDTO;
 import com.example.maintenance_magazine_spare_parts.model.SupplierPart;
 import com.example.maintenance_magazine_spare_parts.service.SupplierPartServices;
 import lombok.AllArgsConstructor;
@@ -24,13 +23,18 @@ public class SupplierController {
     }
 
     @GetMapping("{id}")
-    public SupplierPart getSupplier(@PathVariable Long id){
+    public SupplierPart getSupplier(@PathVariable Long id) {
         return supplierPartServices.getSupplierById(id);
     }
 
     @PostMapping
-    public SupplierPart addSupplier(@RequestBody SupplierPartDTO supplierPartDTO){
-        return supplierPartServices.addSupplier(supplierPartDTO);
+    public SupplierPart addSupplier(@RequestBody SupplierPart supplierPart) {
+        return supplierPartServices.addSupplier(supplierPart);
+    }
+
+    @DeleteMapping
+    public void delateSupplierByid(@PathVariable Long id) {
+        supplierPartServices.deleteSupplierByid(id);
     }
 
 
