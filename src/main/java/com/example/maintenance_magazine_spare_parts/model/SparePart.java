@@ -12,7 +12,7 @@ public class SparePart {
     private Long id;
     private String catalogNumber;
     private String name;
-    private Integer min;
+    private Integer quantity;
     private String localization;
     private String supplier;
 
