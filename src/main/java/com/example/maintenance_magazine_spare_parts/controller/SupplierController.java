@@ -5,6 +5,7 @@ import com.example.maintenance_magazine_spare_parts.service.SupplierPartServices
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,12 @@ public class SupplierController {
     public List<SupplierPart> getSuppliers() {
         return supplierPartServices.getSuppliersParts();
     }
+
+    @GetMapping("{id}")
+    public SupplierPart getSupplier(@PathVariable Long id){
+        return supplierPartServices.getSupplierById(id);
+    }
+
 
 
 }
