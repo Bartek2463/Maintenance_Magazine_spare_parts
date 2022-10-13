@@ -1,5 +1,6 @@
 package com.example.maintenance_magazine_spare_parts.service;
 
+import com.example.maintenance_magazine_spare_parts.dto.SupplierPartDTO;
 import com.example.maintenance_magazine_spare_parts.model.SupplierPart;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -38,8 +39,8 @@ public class SupplierPartServices {
     public SupplierPart getSupplierById (Long id){
         return suppliersParts.get(id.intValue()-1);
     }
-    public SupplierPart addSupplier(SupplierPart supplierPart){
-       suppliersParts.add(supplierPart);
+    public SupplierPart addSupplier(SupplierPartDTO supplierPartDTO){
+        SupplierPart supplierPart = supplierPartDTO.toSupplierPart(nextIdx());
        return supplierPart;
     }
 
