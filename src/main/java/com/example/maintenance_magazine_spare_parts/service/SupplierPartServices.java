@@ -2,7 +2,8 @@ package com.example.maintenance_magazine_spare_parts.service;
 
 import com.example.maintenance_magazine_spare_parts.dto.SupplierPartDTO;
 import com.example.maintenance_magazine_spare_parts.model.SupplierPart;
-import lombok.extern.slf4j.Slf4j;
+import com.example.maintenance_magazine_spare_parts.repository.SupplierRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -10,10 +11,12 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service
-@Slf4j
+@AllArgsConstructor
 public class SupplierPartServices {
 
-    private AtomicLong index = new AtomicLong(0);
+    private SupplierRepository supplierRepository;
+
+
 
     private List<SupplierPart> suppliersParts = new LinkedList<>(){
         {
@@ -28,21 +31,19 @@ public class SupplierPartServices {
         }
     };
 
-    private  Long nextIdx(){
-        return index.incrementAndGet();
-    }
-
     public List<SupplierPart> getSuppliersParts(){
-        return suppliersParts;
+        return supplierRepository.findAll();
     }
 
     public SupplierPart getSupplierById (Long id){
-        return suppliersParts.get(id.intValue()-1);
+        return supplierRepository.findById(id).orElseThrow(null);
     }
-    public SupplierPart addSupplier(SupplierPartDTO supplierPartDTO){
-        SupplierPart supplierPart = supplierPartDTO.toSupplierPart(nextIdx());
-       return supplierPart;
+    public SupplierPart addSupplier(SupplierPart supplierPart){
+        return  supplierRepository.save(supplierPart);
     }
+
+    
+
 
 
 
