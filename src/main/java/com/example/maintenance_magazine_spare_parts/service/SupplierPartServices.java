@@ -35,6 +35,14 @@ public class SupplierPartServices {
         return suppliersParts;
     }
 
+    public SupplierPart getSupplierById (Long id){
+        return suppliersParts.get(id.intValue()-1);
+    }
+    public SupplierPart addSupplier(SupplierPart supplierPart){
+       suppliersParts.add(supplierPart);
+       return supplierPart;
+    }
+
 
 
 
