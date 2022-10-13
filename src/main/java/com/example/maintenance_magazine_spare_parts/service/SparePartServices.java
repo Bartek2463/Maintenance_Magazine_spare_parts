@@ -12,15 +12,18 @@ import java.util.concurrent.atomic.AtomicLong;
 @Slf4j
 public class SparePartServices {
 
-    private AtomicLong idex = new AtomicLong(0);
+    private AtomicLong index = new AtomicLong(0);
     private List<SparePart> spareParts = new LinkedList<>(){
 
         {
-            add(new )
+
         }
     };
 
 
+    private Long nextIdx(){
+        return index.incrementAndGet();
+    }
 
 
 }
