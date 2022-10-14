@@ -1,6 +1,8 @@
 package com.example.maintenance_magazine_spare_parts.service;
 
 import com.example.maintenance_magazine_spare_parts.model.SparePart;
+import com.example.maintenance_magazine_spare_parts.repository.SparePartRepository;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -9,21 +11,17 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service
-@Slf4j
+@AllArgsConstructor
 public class SparePartServices {
 
-    private AtomicLong index = new AtomicLong(0);
-    private List<SparePart> spareParts = new LinkedList<>(){
-
-        {
-
-        }
-    };
+    private SparePartRepository sparePartRepository;
 
 
-    private Long nextIdx(){
-        return index.incrementAndGet();
+    public List<SparePart> getSpareParts(){
+        return sparePartRepository.findAll();
     }
+
+
 
 
 }
