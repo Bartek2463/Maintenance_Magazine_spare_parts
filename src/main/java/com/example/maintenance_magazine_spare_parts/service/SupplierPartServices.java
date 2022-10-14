@@ -31,16 +31,16 @@ public class SupplierPartServices {
         supplierRepository.deleteById(id);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void fillDB() {
-        addSupplier(new SupplierPart(1l, "Bosh"));
-        addSupplier(new SupplierPart(2l, "Froelish"));
-        addSupplier(new SupplierPart(3l, "Atlas Copco"));
-        addSupplier(new SupplierPart(4l, "RoYale"));
-        addSupplier(new SupplierPart(5l, "Transept"));
-        addSupplier(new SupplierPart(6l, "Okuma"));
-        addSupplier(new SupplierPart(7l, "Mazak"));
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void fillDB() {
+//        addSupplier(new SupplierPart(1l, "Bosh"));
+//        addSupplier(new SupplierPart(2l, "Froelish"));
+//        addSupplier(new SupplierPart(3l, "Atlas Copco"));
+//        addSupplier(new SupplierPart(4l, "RoYale"));
+//        addSupplier(new SupplierPart(5l, "Transept"));
+//        addSupplier(new SupplierPart(6l, "Okuma"));
+//        addSupplier(new SupplierPart(7l, "Mazak"));
+//    }
 
 
 }
