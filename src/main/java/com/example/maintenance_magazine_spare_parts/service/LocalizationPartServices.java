@@ -3,8 +3,6 @@ package com.example.maintenance_magazine_spare_parts.service;
 import com.example.maintenance_magazine_spare_parts.model.LocalizationPart;
 import com.example.maintenance_magazine_spare_parts.repository.LocalizationRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,15 +35,15 @@ public class LocalizationPartServices {
         localizationRepository.deleteById(id);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void fillDBLocalization() {
-        addLocalization(new LocalizationPart(1l, "R4/3/3"));
-        addLocalization(new LocalizationPart(2l, "J2/1/6"));
-        addLocalization(new LocalizationPart(3l, "I4/2/2"));
-        addLocalization(new LocalizationPart(4l, "F2/1/3"));
-        addLocalization(new LocalizationPart(5l, "E2/3/5"));
-        addLocalization(new LocalizationPart(6l, "J3/1/6"));
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void fillDBLocalization() {
+//        addLocalization(new LocalizationPart(1l, "R4/3/3"));
+//        addLocalization(new LocalizationPart(2l, "J2/1/6"));
+//        addLocalization(new LocalizationPart(3l, "I4/2/2"));
+//        addLocalization(new LocalizationPart(4l, "F2/1/3"));
+//        addLocalization(new LocalizationPart(5l, "E2/3/5"));
+//        addLocalization(new LocalizationPart(6l, "J3/1/6"));
+//    }
 
 
 }

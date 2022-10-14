@@ -35,14 +35,14 @@ public class SparePartServices {
         sparePartRepository.deleteById(id);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void fillDBSparePart() {
-        addSparePart(new SparePart(1l, "3842992811", "Pas Transportowy GT 2/A", 28));
-        addSparePart(new SparePart(2l, "MWR-25TA", "Klucz dynmometryczny łamany(reg)", 3));
-        addSparePart(new SparePart(3l, "SKKD", "Moduł diodowy ELDC", 4));
-        addSparePart(new SparePart(4l, "22126100", "Matrix Software protection system klucz usb", 2));
-        addSparePart(new SparePart(5l, "SR-1000W", "Kamera SR", 2));
-        addSparePart(new SparePart(6l, "660769", "Uszczelka kołnierzowa", 16));
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void fillDBSparePart() {
+//        addSparePart(new SparePart(1l, "3842992811", "Pas Transportowy GT 2/A", 28));
+//        addSparePart(new SparePart(2l, "MWR-25TA", "Klucz dynmometryczny łamany(reg)", 3));
+//        addSparePart(new SparePart(3l, "SKKD", "Moduł diodowy ELDC", 4));
+//        addSparePart(new SparePart(4l, "22126100", "Matrix Software protection system klucz usb", 2));
+//        addSparePart(new SparePart(5l, "SR-1000W", "Kamera SR", 2));
+//        addSparePart(new SparePart(6l, "660769", "Uszczelka kołnierzowa", 16));
+//    }
 
 }

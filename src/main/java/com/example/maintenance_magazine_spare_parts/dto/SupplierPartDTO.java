@@ -10,8 +10,4 @@ public class SupplierPartDTO {
     private String supplier;
 
 
-    public SupplierPart toSupplierPart(Long id){
-        return new SupplierPart(id,supplier);
-    }
-
 }
