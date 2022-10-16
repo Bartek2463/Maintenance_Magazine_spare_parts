@@ -5,13 +5,12 @@ import com.example.maintenance_magazine_spare_parts.service.SupplierPartServices
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
 @AllArgsConstructor
 @Controller
-@RestController
-@RequestMapping("/supplier")
 public class SupplierController {
 
     private SupplierPartServices supplierPartServices;
@@ -27,9 +26,16 @@ public class SupplierController {
         return supplierPartServices.getSupplierById(id);
     }
 
-    @PostMapping
-    public SupplierPart addSupplier(@RequestBody SupplierPart supplierPart) {
-        return supplierPartServices.addSupplier(supplierPart);
+    @GetMapping("/add")
+    public String getAddSupplier() {
+        return "suppliers/addNewSupplier";
+    }
+
+
+    @PostMapping("/add")
+    public RedirectView addSupplier(@RequestBody SupplierPart supplierPart) {
+        supplierPartServices.addSupplier(supplierPart);
+        return new RedirectView("/suppliers");
     }
 
     @DeleteMapping
