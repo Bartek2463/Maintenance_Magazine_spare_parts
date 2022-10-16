@@ -84,7 +84,7 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/supplier/add"/>'>
+                <form method="post" action='<c:url value="/addSupplier"/>'>
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
