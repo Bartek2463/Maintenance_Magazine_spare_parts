@@ -7,7 +7,9 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @AllArgsConstructor
@@ -20,7 +22,9 @@ public class SupplierPartServices {
     }
 
     public SupplierPart getSupplierById(Long id) {
-        return supplierRepository.findById(id).orElseThrow(null);
+        return supplierRepository
+                .findById(id)
+                .orElseThrow(()-> new NoSuchElementException("No exists"));
     }
 
     public SupplierPart addSupplier(SupplierPart supplierPart) {
@@ -33,13 +37,13 @@ public class SupplierPartServices {
 
 //    @EventListener(ApplicationReadyEvent.class)
 //    public void fillDB() {
-//        addSupplier(new SupplierPart(1l, "Bosh"));
-//        addSupplier(new SupplierPart(2l, "Froelish"));
-//        addSupplier(new SupplierPart(3l, "Atlas Copco"));
-//        addSupplier(new SupplierPart(4l, "RoYale"));
-//        addSupplier(new SupplierPart(5l, "Transept"));
-//        addSupplier(new SupplierPart(6l, "Okuma"));
-//        addSupplier(new SupplierPart(7l, "Mazak"));
+//        addSupplier(new SupplierPart(1l, "Bosh", new HashSet<>()));
+//        addSupplier(new SupplierPart(2l, "Froelish", new HashSet<>()));
+//        addSupplier(new SupplierPart(3l, "Atlas Copco", new HashSet<>()));
+//        addSupplier(new SupplierPart(4l, "RoYale", new HashSet<>()));
+//        addSupplier(new SupplierPart(5l, "Transept", new HashSet<>()));
+//        addSupplier(new SupplierPart(6l, "Okuma", new HashSet<>()));
+//        addSupplier(new SupplierPart(7l, "Mazak", new HashSet<>()));
 //    }
 
 

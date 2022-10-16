@@ -1,14 +1,11 @@
 package com.example.maintenance_magazine_spare_parts.controller;
 
-import com.example.maintenance_magazine_spare_parts.model.LocalizationPart;
 import com.example.maintenance_magazine_spare_parts.model.SupplierPart;
-import com.example.maintenance_magazine_spare_parts.service.LocalizationPartServices;
 import com.example.maintenance_magazine_spare_parts.service.SupplierPartServices;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @AllArgsConstructor
@@ -18,12 +15,7 @@ import java.util.List;
 public class SupplierController {
 
     private SupplierPartServices supplierPartServices;
-    private LocalizationPartServices localizationPartServices;
 
-    @GetMapping("/local")
-public List<LocalizationPart> getLocation(){
-        return localizationPartServices.getLocalizationParts();
-    }
 
     @GetMapping
     public List<SupplierPart> getSuppliers() {
