@@ -36,6 +36,11 @@
             <span>Lokalizacje</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href='<c:url value="/spareParts"/>'>
+            <i class="fas fa-users"></i>
+            <span>Czesci</span></a>
+    </li>
 
 
 
