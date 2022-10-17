@@ -38,14 +38,14 @@
                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Powtórz ">
                   </div>
                 </div>
-                <a href="login.jsp" class="btn btn-primary btn-user btn-block">
+                <a href="login" class="btn btn-primary btn-user btn-block">
                   Rejestruj
                 </a>
                 <hr>
 
               </form>
               <div class="text-center">
-                <a class="small" href="login.jsp">Masz już konto? Zaloguj się!</a>
+                <a class="small" href="login">Masz już konto? Zaloguj się!</a>
               </div>
             </div>
           </div>
