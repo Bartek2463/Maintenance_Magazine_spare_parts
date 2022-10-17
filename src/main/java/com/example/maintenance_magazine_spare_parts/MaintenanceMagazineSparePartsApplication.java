@@ -8,6 +8,7 @@ public class MaintenanceMagazineSparePartsApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MaintenanceMagazineSparePartsApplication.class, args);
+
     }
 
 }
