@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -40,7 +41,7 @@ public class SparePartController {
     }
 
     @PostMapping("/addPart")
-    public RedirectView getSparePart(SparePart sparePart){
+    public RedirectView getSparePart(@Valid SparePart sparePart){
         sparePartServices.addSparePart(sparePart);
         return new RedirectView("/spareParts");
     }
