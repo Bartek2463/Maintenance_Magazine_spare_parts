@@ -21,7 +21,7 @@ public class SupplierPart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String supplier;
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH,mappedBy = "supplierPart")
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "supplierPart")
     private Set<SparePart>spareParts = new HashSet<>();
 
 }

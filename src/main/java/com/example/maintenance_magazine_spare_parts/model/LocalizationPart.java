@@ -21,7 +21,7 @@ public class LocalizationPart {
     private Long id;
     private String localization;
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.REFRESH,mappedBy = "localizationPart")
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "localizationPart")
     private Set<SparePart> spareParts = new HashSet<>();
 
 }
