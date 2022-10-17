@@ -37,6 +37,7 @@ public class LocalizationPartServices {
 
     public void deleteLocalization(Long id) {
         localizationRepository.deleteById(id);
+        System.out.println("Delete Localization id "+id );
     }
 
 //    @EventListener(ApplicationReadyEvent.class)

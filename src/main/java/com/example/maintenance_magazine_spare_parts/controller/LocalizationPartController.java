@@ -3,6 +3,7 @@ package com.example.maintenance_magazine_spare_parts.controller;
 import com.example.maintenance_magazine_spare_parts.model.LocalizationPart;
 import com.example.maintenance_magazine_spare_parts.service.LocalizationPartServices;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import java.util.List;
 @Controller
 public class LocalizationPartController {
 
+    @Autowired
     private LocalizationPartServices localizationPartServices;
 
 
@@ -47,17 +49,17 @@ public class LocalizationPartController {
         return "localizations/editLocalization";
     }
 
-    @PostMapping("/editLozalization/{id}")
+    @PostMapping("/editLocalization/{id}")
     public RedirectView postEditLocalization(@Valid LocalizationPart localizationPart) {
         localizationPartServices.addLocalization(localizationPart);
         return new RedirectView("/localizations");
     }
 
-    @PostMapping("/delete/{id}")
-    public RedirectView deleteLozalization(@PathVariable Long id) {
-        localizationPartServices.deleteLocalization(id);
-        return new RedirectView("/localizations");
-    }
+//    @PostMapping("/delete/{id}")
+//    public RedirectView deleteLocalization(@PathVariable Long id) {
+//        localizationPartServices.deleteLocalization(id);
+//        return new RedirectView("/localizations");
+//    }
 
 
 }

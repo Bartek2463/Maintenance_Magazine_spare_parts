@@ -36,17 +36,17 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/editSupplier/${supplier.id}"/>'>
+                <form method="post" action='<c:url value="/editLocalization/${localization.id}"/>'>
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">Dostawca</label>
+                                        <label class="col-2 col-form-label">Lokalizacja</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="supplier"
-                                                   value="${supplier.supplier}">
+                                            <input class="form-control" type="text" name="localization"
+                                                   value="${localization.localization}">
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                     <input class="btn btn-success pull-left" type="submit" value="Zapisz zmiany"
                            id="searchButton"></input>
                 </form>
-                <form method="post" action='<c:url value="/delete/${supplier.id}"/>'>
+                <form method="post" action='<c:url value="/delete/${localization.id}"/>'>
                     <input class="btn btn-danger" type="submit" value="Usuń"></input>
                 </form>
 
