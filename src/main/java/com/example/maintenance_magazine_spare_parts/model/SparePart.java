@@ -13,6 +13,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SparePart {
+    
+    
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
